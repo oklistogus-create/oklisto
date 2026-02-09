@@ -31,6 +31,8 @@
 
     <!-- Estilos -->
     <link rel="stylesheet" href="assets/css/styles.css">
+    <!--scripts Ruta-->
+    <script src="assets/js/scripts.js"></script>
 </head>
 
 <body>
@@ -43,31 +45,66 @@
             </a>
             <nav class="nav-links">
                 <a href="#servicios">Servicios</a>
-                <a href="#proceso">Proceso</a>
-                <a href="#testimonios">Casos de Éxito</a>
-                <a href="#precios">Planes</a>
-                <a href="#contacto">Contacto</a>
+                    <a href="#precios">Planes</a>
+                        <a href="#testimonios">Testimonios</a>
+                            <a href="#contacto">Contacto</a>
             </nav>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
         <div class="mobile-menu" id="mobileMenu">
-            <a href="#servicios">Servicios</a>
-            <a href="#proceso">Proceso</a>
-            <a href="#testimonios">Casos de Éxito</a>
-            <a href="#precios">Planes</a>
-            <a href="#contacto">Contacto</a>
+                <a href="#servicios">Servicios</a>
+                    <a href="#precios">Planes</a>
+                        <a href="#testimonios">Testimonios</a>
+                            <a href="#contacto">Contacto</a>
         </div>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <video class="hero-video" src="./assets/video/3145-166335957.mp4" poster="./assets/hero-poster.jpg" autoplay
-            muted playsinline loop></video>
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-
+<!-- Hero Section con fallback para móviles -->
+<section class="hero" id="hero-section">
+    <!-- Video adaptativo -->
+    <video class="hero-video" 
+           autoplay muted loop playsinline 
+           preload="metadata"
+           poster="./assets/video/3145-166335957/3145-166335957_thumb_1.jpg"
+           onerror="document.getElementById('hero-section').classList.add('no-video')">
+        
+        <!-- WebM versions -->
+        <source src="./assets/video/3145-166335957/3145-166335957_1920.webm" 
+                type="video/webm"
+                media="(min-width: 1201px)">
+        <source src="./assets/video/3145-166335957/3145-166335957_1280.webm" 
+                type="video/webm"
+                media="(min-width: 769px)">
+        <source src="./assets/video/3145-166335957/3145-166335957_854.webm" 
+                type="video/webm"
+                media="(min-width: 481px)">
+        <source src="./assets/video/3145-166335957/3145-166335957_640.webm" 
+                type="video/webm"
+                media="(max-width: 480px)">
+        
+        <!-- MP4 fallbacks -->
+        <source src="./assets/video/3145-166335957/3145-166335957_1920.mp4" 
+                type="video/mp4"
+                media="(min-width: 1201px)">
+        <source src="./assets/video/3145-166335957/3145-166335957_1280.mp4" 
+                type="video/mp4"
+                media="(min-width: 769px)">
+        <source src="./assets/video/3145-166335957/3145-166335957_854.mp4" 
+                type="video/mp4"
+                media="(min-width: 481px)">
+        <source src="./assets/video/3145-166335957/3145-166335957_640.mp4" 
+                type="video/mp4"
+                media="(max-width: 480px)">
+        
+        <!-- Fallback imagen (si el video falla) -->
+        <img src="./assets/video/3145-166335957/3145-166335957_thumb_1.jpg" 
+             alt="Fondo Oklisto">
+    </video>
+    
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        <!-- Tu contenido actual aquí -->
             <div class="hero-text">
                 <h1>Diseñamos webs, no vendemos sitios.</h1>
                 <p>Creamos experiencias digitales funcionales, con identidad visual clara y enfocadas en conversión
@@ -453,8 +490,7 @@
                         <img src="assets/img/iconray.svg" alt="Logo" class="logo-icon">
                         ok_listo
                     </a>
-                    <p>Diseño web express e identidad gráfica para profesionales que quieren destacar y llenar su agenda
-                        de clientes.</p>
+                    <p>Diseño web express e identidad gráfica para profesionales que quieren destacar.</p>
                     <div class="social-links">
                         <!--<a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
