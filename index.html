@@ -1,47 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    
-<!-- Google tag (gtag.js) -->
+
+<!-- Google tag (no bloquea render) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HZH71BS9D"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-9HZH71BS9D');
 </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ok listo - Sitios webs para Profesionales</title>
-    <meta name="description"
-        content="Diseños web ultrarrápidos + identidad gráfica para profesionales que quieren herramientas para lograr sus objetivos">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ok listo - Sitios webs para Profesionales</title>
+<meta name="description"
+      content="Diseños web ultrarrápidos + identidad gráfica para profesionales que quieren herramientas para lograr sus objetivos">
 
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Code+Pro:wght@400;700&display=swap"
-        rel="stylesheet">
+<!-- CSS CRÍTICO MINIMAL (above the fold) -->
+<style>
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #fff;
+  }
+</style>
 
-    <!-- Íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- CSS principal diferido -->
+<link rel="preload" href="assets/css/styles.css" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="assets/css/styles.css"></noscript>
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <!--scripts Ruta-->
-    <script src="assets/js/scripts.js"></script>
+<!-- Google Fonts optimizado -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Code+Pro:wght@400;700&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'">
+
+<noscript>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Code+Pro:wght@400;700&display=swap">
+</noscript>
+
+<!-- Font Awesome diferido -->
+<link rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="this.rel='stylesheet'">
+<noscript>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</noscript>
+
+<!-- JS -->
+<script src="assets/js/scripts.js" defer></script>
+
+<link rel="preload"
+      as="image"
+      href="assets/video/3145-166335957/3145-166335957_thumb_1.jpg"
+      fetchpriority="high">
+
 </head>
 
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <img src="assets/img/iconray.svg" alt="Logo" class="logo-icon">
-                ok_listo
+                oklisto
             </a>
             <nav class="nav-links">
                 <a href="#servicios">Servicios</a>
@@ -49,7 +78,10 @@
                         <a href="#testimonios">Testimonios</a>
                             <a href="#contacto">Contacto</a>
             </nav>
-            <button class="mobile-menu-btn">
+
+            <button class="mobile-menu-btn"
+                    aria-label="Abrir menú de navegación"
+                    aria-expanded="false">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
@@ -60,12 +92,12 @@
                             <a href="#contacto">Contacto</a>
         </div>
     </header>
-<!-- Hero Section con fallback para móviles -->
-<section class="hero" id="hero-section">
+            <!-- Hero Section con fallback para móviles -->
+            <section class="hero" id="hero-section">
     <!-- Video adaptativo -->
     <video class="hero-video" 
            autoplay muted loop playsinline 
-           preload="metadata"
+           preload="none"
            poster="./assets/video/3145-166335957/3145-166335957_thumb_1.jpg"
            onerror="document.getElementById('hero-section').classList.add('no-video')">
         
@@ -114,22 +146,6 @@
                     <i class="fab fa-whatsapp"></i> Consultanos
                 </a>
                 <a href="#planes" class="btn btn-light btn-lg">Ver planes</a>
-
-                <!--iNFO PARA MÁS ADELANTE
-                <div class="stats-container">
-                    <div class="stat-item">
-                        <span class="stat-value">72h</span>
-                        <span class="stat-label">Tiempo de entrega</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">120+</span>
-                        <span class="stat-label">Clientes satisfechos</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-value">98%</span>
-                        <span class="stat-label">Tasa de satisfacción</span>
-                    </div>
-                </div>EN PRIMERA INSTANCIA NO-->
             </div>
         </div>
     </section>
@@ -137,41 +153,45 @@
 <section class="tech-marquee">
     <div class="marquee-container">
         <div class="marquee-track">
-            <span class="tech-item">HTML5</span>
-            <span class="tech-item">CSS3</span>
-            <span class="tech-item">JavaScript</span>
-            <span class="tech-item">SEO</span>
-            <span class="tech-item">Responsive Design</span>
-            <span class="tech-item">Python</span>
-            <span class="tech-item">DeepSeek</span>
-            <span class="tech-item">ChatGPT</span>
-            <!-- Duplicados para efecto continuo -->
-            <span class="tech-item">HTML5</span>
-            <span class="tech-item">CSS3</span>
-            <span class="tech-item">JavaScript</span>
-            <span class="tech-item">SEO</span>
-            <span class="tech-item">Responsive Design</span>
-            <span class="tech-item">Python</span>
-            <span class="tech-item">DeepSeek</span>
-            <span class="tech-item">ChatGPT</span>
-            <!-- Duplicados para efecto continuo -->
-            <span class="tech-item">HTML5</span>
-            <span class="tech-item">CSS3</span>
-            <span class="tech-item">JavaScript</span>
-            <span class="tech-item">SEO</span>
-            <span class="tech-item">Responsive Design</span>
-            <span class="tech-item">Python</span>
-            <span class="tech-item">DeepSeek</span>
-            <span class="tech-item">ChatGPT</span>
-            <!-- Duplicados para efecto continuo -->
-            <span class="tech-item">HTML5</span>
-            <span class="tech-item">CSS3</span>
-            <span class="tech-item">JavaScript</span>
-            <span class="tech-item">SEO</span>
-            <span class="tech-item">Responsive Design</span>
-            <span class="tech-item">Python</span>
-            <span class="tech-item">DeepSeek</span>
-            <span class="tech-item">ChatGPT</span>
+            <!-- Primera tanda -->
+            <span class="tech-item"><i class="fab fa-html5"></i> HTML5</span>
+            <span class="tech-item"><i class="fab fa-css3-alt"></i> CSS3</span>
+            <span class="tech-item"><i class="fab fa-js-square"></i> JavaScript</span>
+            <span class="tech-item"><i class="fas fa-search"></i> SEO</span>
+            <span class="tech-item"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+            <span class="tech-item"><i class="fab fa-python"></i> Python</span>
+            <span class="tech-item"><i class="fas fa-robot"></i> DeepSeek</span>
+            <span class="tech-item"><i class="fas fa-comment-dots"></i> ChatGPT</span>
+            
+            <!-- Duplicados para efecto continuo (segunda tanda) -->
+            <span class="tech-item"><i class="fab fa-html5"></i> HTML5</span>
+            <span class="tech-item"><i class="fab fa-css3-alt"></i> CSS3</span>
+            <span class="tech-item"><i class="fab fa-js-square"></i> JavaScript</span>
+            <span class="tech-item"><i class="fas fa-search"></i> SEO</span>
+            <span class="tech-item"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+            <span class="tech-item"><i class="fab fa-python"></i> Python</span>
+            <span class="tech-item"><i class="fas fa-robot"></i> DeepSeek</span>
+            <span class="tech-item"><i class="fas fa-comment-dots"></i> ChatGPT</span>
+            
+            <!-- Duplicados para efecto continuo (tercera tanda) -->
+            <span class="tech-item"><i class="fab fa-html5"></i> HTML5</span>
+            <span class="tech-item"><i class="fab fa-css3-alt"></i> CSS3</span>
+            <span class="tech-item"><i class="fab fa-js-square"></i> JavaScript</span>
+            <span class="tech-item"><i class="fas fa-search"></i> SEO</span>
+            <span class="tech-item"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+            <span class="tech-item"><i class="fab fa-python"></i> Python</span>
+            <span class="tech-item"><i class="fas fa-robot"></i> DeepSeek</span>
+            <span class="tech-item"><i class="fas fa-comment-dots"></i> ChatGPT</span>
+            
+            <!-- Duplicados para efecto continuo (cuarta tanda) -->
+            <span class="tech-item"><i class="fab fa-html5"></i> HTML5</span>
+            <span class="tech-item"><i class="fab fa-css3-alt"></i> CSS3</span>
+            <span class="tech-item"><i class="fab fa-js-square"></i> JavaScript</span>
+            <span class="tech-item"><i class="fas fa-search"></i> SEO</span>
+            <span class="tech-item"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+            <span class="tech-item"><i class="fab fa-python"></i> Python</span>
+            <span class="tech-item"><i class="fas fa-robot"></i> DeepSeek</span>
+            <span class="tech-item"><i class="fas fa-comment-dots"></i> ChatGPT</span>
         </div>
     </div>
 </section>
@@ -517,19 +537,39 @@
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Contacto</h4>
-                    <ul>
-                        <li><i class="fab fa-whatsapp"></i> +54 9 11 4029-7739</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Buenos Aires, Argentina</li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:oklisto.gus@gmail.com" style="color: #D1D5DB;">oklisto.gus@gmail.com</a>
-                        </li>
-                    </ul>
+                    <h4>Contacto</h4>             
+    <ul>                     
+        <!-- WhatsApp -->
+        <li>
+        <a href="https://wa.me/5491140297739?text=Hola%20Gustavo,%20vi%20oklisto%20y%20quiero%20mi%20landing%20profesional" 
+        target="_blank" 
+        rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i> +54 9 11 4029-7739
+        </a>
+        </li>
+
+        <!-- Ubicación -->
+        <li>
+        <a href="https://maps.app.goo.gl/zp9NY9zFGVBeypNV8" 
+            target="_blank" 
+            rel="noopener noreferrer">
+            <i class="fas fa-map-marker-alt"></i> Buenos Aires, Argentina
+        </a>
+        </li>
+
+        <!-- Email -->
+        <li>
+        <a href="mailto:oklisto.gus@gmail.com" 
+            style="color: #D1D5DB;">
+            <i class="fas fa-envelope"></i> oklisto.gus@gmail.com
+        </a>
+        </li>
+
+    </ul>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2025 ok_listo. Todos los derechos reservados. Buenos Aires, Argentina.
+                &copy; 2026 oklisto! Todos los derechos reservados. Buenos Aires, Argentina.
             </div>
         </div>
     </footer>
@@ -539,33 +579,6 @@
         class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp whatsapp-icon"></i>
     </a>
-
-    <script>
-        // Mobile menu toggle functionality
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>

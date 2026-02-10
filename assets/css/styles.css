@@ -1,7 +1,6 @@
 :root {
-    --primary: #1F2937;
-    /* Header y footer */
-    --primary-light: #374151;
+    --primary: #845ec2;
+    --primary-light: #233D4D;
     --secondary: #10B981;
     --light: #F9FAFB;
     --gray: #6B7280;
@@ -11,6 +10,16 @@
     --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     --transition: all 0.3s ease;
 }
+
+/* NOTAS DE COLOR 
+#10B981
+#5291C3
+#845EC2
+
+
+
+
+*/
 
 * {
     margin: 0;
@@ -22,7 +31,7 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: #111827;
-    background-color: #ffffff;
+    background-color: var(--light);
     overflow-x: hidden;
 }
 
@@ -84,7 +93,7 @@ section {
 
 .btn-primary {
     background-color: var(--secondary);
-    color: white;
+    color: var(--light);
     box-shadow: var(--box-shadow);
 }
 
@@ -103,7 +112,7 @@ header {
     padding: 1.5rem 0;
     position: sticky;
     top: 0;
-    background-color: var(--primary);
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 100;
 }
@@ -221,7 +230,6 @@ header {
 .hero-text {
     max-width: 600px;
     /* Ensure text is readable against background */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-text h1 {
@@ -335,7 +343,13 @@ header {
 }
 /* Problem Solution Section */
 .problem-solution {
-    background-color: var(--light);
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    color: var(--light); !important;
+}
+.problem-solution h2,
+.problem-solution p {
+    color: var(--light)
+    text-align: center; /* Para centrar el párrafo */
 }
 
 .ps-container {
@@ -343,15 +357,17 @@ header {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    margin-top: 5%;
 }
 
 .problem-card,
 .solution-card {
-    background: white;
+    background: var(--light);
     border-radius: var(--border-radius);
     padding: 2.5rem;
     box-shadow: var(--box-shadow);
     height: 100%;
+    color: var(--primary-light)
 }
 
 .problem-card {
@@ -377,7 +393,7 @@ header {
 
 .problem-list li::before {
     content: "✗";
-    color: #EF4444;
+    color: red;
     font-weight: bold;
 }
 
@@ -411,7 +427,7 @@ header {
 
 .service-icon {
     font-size: 3rem;
-    color: var(--primary);
+    color: var(--secondary);
     margin-bottom: 1.5rem;
 }
 
@@ -454,7 +470,11 @@ header {
 
 /* Testimonials */
 .testimonials {
-    background-color: var(--light);
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+}
+
+.testimonials h2 {
+    color: var(--light);
 }
 
 .testimonials-grid {
@@ -515,6 +535,7 @@ header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    margin-top: 5%;
 }
 
 .pricing-card {
@@ -600,24 +621,24 @@ header {
 
 /* Guarantee Section */
 .guarantee-section {
-    background-color: #f0f7ff;
-    padding: 3rem 0;
+    background-color: var(--light);
+    padding: 1rem 0;
     text-align: center;
 }
 
 .guarantee-content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
     border-radius: var(--border-radius);
+    padding-bottom: 6%;
 }
 
 /* CTA Section */
 .cta {
     background: linear-gradient(to right, var(--primary), var(--primary-light));
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
-    padding: 5rem 0;
+    padding: 2rem 0;
 }
 
 .cta h2 {
@@ -645,8 +666,7 @@ header {
 
 /* Footer */
 footer {
-    background-color: var(--primary);
-    color: white;
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
     padding: 4rem 0 2rem;
 }
 
@@ -703,7 +723,7 @@ footer {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 0, 0, 0.1);
     color: white;
     transition: var(--transition);
 }
@@ -854,7 +874,7 @@ footer {
 
 /* Tech Marquee Styles */
 .tech-marquee {
-    background-color: #246a73; /* verde */
+    background-color: var(--secondary); /* verde */
     padding: 15px 0;
     overflow: hidden;
     position: relative;
@@ -937,7 +957,7 @@ footer {
 
 /* Contact & Location Section */
 .contact-location-section {
-    background-color: #246a73;
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
     color: white;
     padding: 80px 0;
     width: 100%;
@@ -1153,4 +1173,17 @@ footer {
         font-size: 1rem;
     }
 }
-/* FIN CONTACTO Y LUGAR */
+/* Para mejorar fontface */
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
